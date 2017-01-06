@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven { url 'http://repo.spring.io/plugins-release' }
+    }
+
+    dependencies {
+        classpath("org.springframework.build.gradle:propdeps-plugin:$propdepsPluginVersion")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'propdeps'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+
+    // If `mavenLocal()` is placed before `jcenter()`,
+    // you can see the source code for libraries in IntelliJ.
+    // Why?
+    mavenLocal()
+}
+
+dependencies {
+    provided("org.projectlombok:lombok:$lombokVersion")
+
+    testCompile("junit:junit:$jUnitVersion")
+    testCompile("org.assertj:assertj-core:$assertJVersion")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.14.1'
+}
