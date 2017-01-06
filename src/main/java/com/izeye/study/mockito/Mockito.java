@@ -1,5 +1,6 @@
 package com.izeye.study.mockito;
 
+import com.izeye.study.mockito.internal.MockitoCore;
 import com.izeye.study.mockito.stubbing.OngoingStubbing;
 
 /**
@@ -9,13 +10,14 @@ import com.izeye.study.mockito.stubbing.OngoingStubbing;
  */
 public class Mockito {
 
+	private static final MockitoCore MOCKITO_CORE = new MockitoCore();
+
 	public static <T> T mock(Class<T> classToMock) {
 		return mock(classToMock, withSettings());
 	}
 
 	public static <T> T mock(Class<T> classToMock, MockSettings mockSettings) {
-		// TODO: Implement me!
-		return null;
+		return MOCKITO_CORE.mock(classToMock, mockSettings);
 	}
 
 	public static MockSettings withSettings() {
