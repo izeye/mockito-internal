@@ -1,6 +1,8 @@
 package com.izeye.study.mockito;
 
 import com.izeye.study.mockito.internal.MockitoCore;
+import com.izeye.study.mockito.internal.creation.MockSettingsImpl;
+import com.izeye.study.mockito.stubbing.Answer;
 import com.izeye.study.mockito.stubbing.OngoingStubbing;
 
 /**
@@ -9,6 +11,8 @@ import com.izeye.study.mockito.stubbing.OngoingStubbing;
  * @author Johnny Lim
  */
 public class Mockito {
+
+	public static final Answer<Object> RETURNS_DEFAULTS = Answers.RETURNS_DEFAULTS.get();
 
 	private static final MockitoCore MOCKITO_CORE = new MockitoCore();
 
@@ -22,7 +26,7 @@ public class Mockito {
 
 	public static MockSettings withSettings() {
 		// TODO: Implement me!
-		return null;
+		return new MockSettingsImpl().defaultAnswer(RETURNS_DEFAULTS);
 	}
 
 	public static <T> OngoingStubbing<T> when(T methodCall) {

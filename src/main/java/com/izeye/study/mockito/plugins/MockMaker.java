@@ -10,6 +10,6 @@ import com.izeye.study.mockito.mock.MockCreationSettings;
  */
 public interface MockMaker {
 
-	<T> T createMock(MockCreationSettings<T> createSettings, MockHandler mockHandler);
+	<T> T createMock(MockCreationSettings<T> creationSettings, MockHandler mockHandler);
 
 }

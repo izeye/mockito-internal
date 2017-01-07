@@ -14,10 +14,11 @@ public class MockUtil {
 
 	private static final MockMaker MOCK_MAKER = Plugins.getMockMaker();
 
-	public <T> T createMock(MockCreationSettings<T> createSettings) {
+	public <T> T createMock(MockCreationSettings<T> creationSettings) {
+		// TODO: Implement me!
 		MockHandler mockHandler = null;
-		T mock = MOCK_MAKER.createMock(createSettings, mockHandler);
-		return null;
+		T mock = MOCK_MAKER.createMock(creationSettings, mockHandler);
+		return mock;
 	}
 
 }

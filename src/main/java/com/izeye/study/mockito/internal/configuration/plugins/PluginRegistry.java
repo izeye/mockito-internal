@@ -1,6 +1,6 @@
 package com.izeye.study.mockito.internal.configuration.plugins;
 
-import com.izeye.study.mockito.internal.cglib.CglibMockMaker;
+import com.izeye.study.mockito.internal.creation.cglib.CglibMockMaker;
 import com.izeye.study.mockito.plugins.MockMaker;
 import com.izeye.study.mockito.plugins.PluginSwitch;
 
