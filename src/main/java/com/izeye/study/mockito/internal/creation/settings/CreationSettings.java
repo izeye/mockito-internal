@@ -1,8 +1,11 @@
 package com.izeye.study.mockito.internal.creation.settings;
 
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
+import com.izeye.study.mockito.listeners.InvocationListener;
 import com.izeye.study.mockito.mock.MockCreationSettings;
 import com.izeye.study.mockito.mock.MockName;
 import com.izeye.study.mockito.mock.SerializableMode;
@@ -21,6 +24,7 @@ public class CreationSettings<T> implements MockCreationSettings<T> {
 	protected Answer<Object> defaultAnswer;
 	private MockName mockName;
 	private SerializableMode serializableMode = SerializableMode.NONE;
+	private List<InvocationListener> invocationListeners = new ArrayList<>();
 	private boolean useConstructor;
 
 	public CreationSettings() {
